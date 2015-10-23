@@ -1,0 +1,519 @@
+// =======================================
+// Media Queries Variables (Device)
+// =======================================
+$mobile: 560px;
+$tablet: 760px;
+$desktop: 1000px;
+
+// =======================================
+// Grid System Style
+// =======================================
+// Layout wrap
+.wrap {
+	min-width: 320px;
+	padding-left: 20px;
+	padding-right: 20px;
+	@include susy-breakpoint($desktop, 12) {
+		@include container($desktop);
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+// =======================================
+// Base Style
+// =======================================
+html[class^='lt-ie'], [class^='lt-ie'] body {
+	height: 100%;
+}
+body {
+	height: 100%;
+	height: 100vh;
+	background: #323232;
+	* {
+		padding: 0;
+		margin: 0;
+	}
+}
+// 드래그 색상 지정
+*::selection {
+	background-color: #dfbde9; color: $font-color-green;
+}
+*::-moz-selection {
+	background-color: #dfbde9; color: $font-color-green;
+}
+// border-box 설정
+@include border-box-sizing;
+input, button, select, textarea {
+	border: 0;
+	cursor: pointer;
+	outline: none;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	textarea {
+		margin-bottom: -5px;
+	}
+}
+a {
+	color: inherit;
+	text-decoration: inherit;
+	cursor: pointer;
+	outline: none;
+}
+button {
+	background-color: transparent;
+	outline: none;
+}
+// 크롬 input 자동완성 색상 (안보이게 하려면 input 태그에 'autocomplete="Off"')
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+	-webkit-text-fill-color: #999 !important;
+	-webkit-box-shadow: 0 0 0px 1000px #e0e0e0 inset;
+}
+// 영역 밖으로 넘어가는 글자 점(...)처리
+%text-wrap {
+	display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+// 영역 내 가운데 정렬
+@mixin wh-center ($position: absolute, $h-percent: 50%, $w-percent: 50%) {
+	position: $position;
+	top: $h-percent;
+	left: $w-percent;
+	transform: translate(-$h-percent, -$w-percent);
+}
+@mixin w-center ($position: absolute, $w-percent: 50%) {
+	position: $position;
+	left: $w-percent;
+	transform: translateX(-$w-percent);
+}
+@mixin h-center ($position: absolute, $h-percent: 50%) {
+	position: $position;
+	top: $h-percent;
+	transform: translateY(-$h-percent);
+}
+// 별점(★☆) 버튼
+span.star {
+	color: $font-color-green;
+	.fa {
+		margin-right: 2px;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	.fa-star:before {
+		letter-spacing: -0.2em;
+	}
+	.fa-star-o:before {
+		letter-spacing: 0.2em;
+	}
+}
+// 리스트 더보기 버튼
+.btn-more {
+	width: 235px;
+	font-size: 12px;
+	line-height: 28px;
+	border: 1px solid $border-gray;
+	clear: both;
+	@include w-center ($position: relative);
+	i.fa {
+		margin-left: 10px;
+		vertical-align: text-top;
+	}
+	@include susy-breakpoint($mobile, 6) {
+		@include span(6);
+	}
+	@include susy-breakpoint($tablet, 8) {
+		@include span(8);
+	}
+	@include susy-breakpoint($desktop, 12) {
+		// @include span(6 at 4);
+		width: 490px;
+	}
+}
+// 폰트 그라디언트
+@mixin font-gradient ($deg: 45deg, $from-color: rgba(255,255,255,0.5), $strat: 30%, $to-color: rgba(0,0,0,0.5), $end:70%, $txt-shadow: rgba(255,255,255, 0.1)) {
+	// 적용예 : $deg: to right, to top right, 45deg, left
+	background: -webkit-linear-gradient($deg,$from-color $strat, $to-color $end);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-shadow: 1px 1px 1px $txt-shadow;
+}
+
+// =======================================
+// Skip Navigation
+// =======================================
+.blind {
+	position: relative;
+	z-index: 100;
+	display: block;
+	overflow: hidden;
+	font-size: 0;
+	text-align: center;
+	width: 1px;
+	height: 1px;
+	line-height: 0;
+	margin: 0 -1px -1px 0;
+	&:focus, &:active, &:hover {
+		font-size: 12px;
+		font-weight: bold;
+		color: #fff;
+		text-decoration: inherit;
+		width: 100%;
+		height: 30px;
+		line-height: 30px;
+		margin: 0;
+		background: $bg-default-green;
+	}
+}
+
+// =======================================
+// Checkbox Style
+// =======================================
+.checkbox {
+	position: relative;
+	label {
+		display: inline-block;
+		font-size: 12px;
+		vertical-align: super;
+		cursor: pointer;
+		.checkbox-label {
+			font-size: 12px;
+			padding-top: 2px;
+		}
+	}
+	input {
+		display: none;
+	}
+}
+// Kalypto.checked.js 자동 생성 태그 Style 적용
+.k_toggle {
+	display: inline-block;
+	font-family: FontAwesome;
+	width: 19px;
+	height: 19px;
+	border: 1px solid #bdbdbd;
+	margin-right: 4px;
+	border-radius: 3px;
+	background: #fff;
+}
+.k_toggle.checked:before {
+	float: left;
+	font-family: FontAwesome;
+	font-size: 14px;
+	color: $font-color-green;
+	padding-left: 2px;
+	padding-right: 2px;
+	line-height: 1.25;
+	content: '\f00c';
+}
+
+// =======================================
+// Radiobox Style
+// =======================================
+.radiobox {
+	@extend .checkbox;
+}
+// Kalypto.checked.js 자동 생성 태그 Style 적용
+.k_toggleR {
+	border-radius: 10px;
+	@extend .k_toggle;
+}
+.k_toggleR.checked:before {
+	@extend .k_toggle.checked:before;
+	font-size: 12px;
+	content: '\f111';
+}
+
+// =======================================
+// Input Group Style
+// =======================================
+input, select, textarea {
+	height: 30px;
+	padding: 0 6px;
+	border: 1px solid #d2d2d2;
+	box-sizing: border-box;
+}
+
+// =======================================
+// Select Group Style
+// =======================================
+
+// IE 10, 11의 네이티브 화살표 숨기기
+.lt-ie10 {
+	select::-ms-expand {
+		display: none;
+	}
+}
+
+// =======================================
+// Background Style
+// =======================================
+%bg-common {
+	background: {
+		color: #f3f3f3;
+		image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAN0lEQVQYV2P8//9/PQMDAwMjI2MjiEYHjAQVwHSAFKKbAhZDNhJZEYyNogCkGN1K0hTgtQKXIwEj7i8BEis/agAAAABJRU5ErkJggg=="); }
+}
+%bg-top {
+	background: {
+		color: $bg-default-green;
+		image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIElEQVQIW2NkQAITDjD8ZwQRBQ4McJoRpAAmCGJjqAAADXQRVJ2iIEkAAAAASUVORK5CYII=");
+	}
+}
+
+
+// =======================================
+// Paging Style
+// =======================================
+.paging {
+	text-align: center;
+	color: #989898;
+	padding-top: 14px;
+	button {
+		height: 18px;
+		padding: 0 4px;
+		&:hover, &:active, .active {
+			color: $font-color-green;
+		}
+		[class*='fa-caret'] {
+			font-size: 17px;
+			vertical-align: top;
+		}
+		.fa-caret-left {
+			margin-right: 10px;
+		}
+		.fa-caret-right {
+			margin-left: 10px;
+		}
+	}
+	span {
+		a {
+			display: inline-block;
+			min-width: 26px;
+			padding: 2px 4px;
+			box-sizing: border-box;
+		}
+		&:hover, &:active, &.active {
+			a {
+				font-weight: bold;
+				color: #fff;
+				background: $bg-default-green;
+				border-radius: 10px;
+			}
+		}
+	}
+}
+
+// =======================================
+// Layout Style
+// =======================================
+#header, #footer, #container {
+	width: 100%;
+}
+#header {
+	height: $base-line-height * 4;
+	@extend %bg-top;
+}
+#header {
+	.wrap {
+		h1 {
+			line-height: $base-line-height * 4;
+		}
+		.top-menu {
+			height: 100%;
+			font-size: 14px;
+			text-align: center;
+		}
+		.user-name {
+			font-size: 16px;
+			color: #fff;
+			text-align: right;
+			line-height: $base-line-height * 4;
+		}
+	}
+}
+#header {
+	.wrap {
+		.top-menu {
+			text-align: right;
+			> a {
+				display: inline-block;
+				color: #4b6303;
+				min-width: 80px;
+				height: 100%;
+				line-height: $base-line-height * 2;
+				padding-left: 28px;
+				padding-right: 28px;
+				margin-top: $base-line-height;
+				border-left: 1px solid #80ab00;
+				box-shadow: inset 2px 0 1px -1px #b8db4d;
+				&:last-child {
+					padding-right: 0;
+				}
+				&:hover, &:focus, &.selected {
+					color: #fff;
+					i.fa {
+						color: #fff;
+					}
+				}
+				i.fa {
+					font-size: 20px;
+					color: #4b6303;
+					vertical-align: middle;
+					margin-right: 6px;
+					@include font-gradient($deg: -15deg, $from-color: rgba(75,99,3,1.0), $strat: 45%, $to-color: rgba(109,144,5,1.0), $end: 80%);
+				}
+			}
+		}
+	}
+}
+#header {
+	.wrap {
+		.select-style {
+			display: inline-block;
+			width: 230px;
+			margin-top: $base-line-height;
+			.stb-select-container {
+				width: 100%;
+				height: 36px;
+				background: #fff;
+				border: 1px solid #929292;
+				border-radius: 4px;
+				> span {
+					font-size: 14px;
+					color: #bbb;
+					display: inline-block;
+					width: 100%;
+					line-height: 34px;
+					padding-left: 30px;
+					background: url("/Common/images/common/btn-like-on.png") 0 8px no-repeat;
+				}
+				&::after {
+					font-size: 22px;
+					top: 1px;
+					right: 10px;
+					opacity: 0.4;
+				}
+				.stb-select {
+					top: 34px;
+					outline: none;
+					border: 1px solid #929292;
+					border-radius: 4px;
+					> li {
+						font-size: 14px;
+						line-height: 26px;
+					}
+				}
+			}
+		}
+	}
+}
+#header {
+	.wrap {
+		.logo {
+			@include span(1);
+		}
+		@include susy-breakpoint($tablet, 8) {
+			.logo {
+				@include span(2);
+			}
+			.user-name {
+				@include span(2);
+			}
+			.select-style {
+				@include span(4);
+				@include last;
+			}
+		}
+		@include susy-breakpoint($desktop, 12) {
+			.logo {
+				@include span(2);
+			}
+			.user-name {
+				@include span(4);
+			}
+			.top-menu {
+				@include span(3);
+			}
+			.select-style {
+				@include span(3);
+				@include last;
+			}
+		}
+	}
+}
+#container {
+	position: relative;
+	min-height: 480px;
+	background: #fff;
+	overflow: hidden;
+	clear: both;
+	@include susy-breakpoint($tablet, 8) {
+		min-height: 680px;
+	}
+	@include susy-breakpoint($desktop, 12) {
+		min-height: 750px;
+	}
+}
+#footer {
+	position: relative;
+	overflow: hidden;
+	height: 40px;
+	color: #999;
+	border-top: 1px solid #fff;
+	background: #323232;
+	.copyright {
+		font-size: 12px;
+		text-align: center;
+		line-height: 40px;
+		span {
+			color: $font-color-green;
+		}
+	}
+}
+
+// =======================================
+// Content Layout Style
+// =======================================
+
+// 도움말 스타일
+.notification {
+	padding-top: 7px;
+	clear: both;
+	i.fa {
+		color: $font-color-green;
+		font-size: 14px;
+		vertical-align: middle;
+	}
+	p {
+		line-height: 19px;
+	}
+	p:before {
+		padding-right: 6px;
+		font-family: FontAwesome;
+		font-size: 13px;
+		color: $font-color-nav;
+		content: '\f06a';
+	}
+}
+// 한줄 라인 배치 (버튼, 체크박스, 라이오버튼 등)
+.line-left-box-area {
+	float: left;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	> li {
+		float: left;
+		margin-left: 6px;
+		&.select-style {
+			.stb-select-container {
+				width: 150px;
+				font-size: 12px;
+			}
+		}
+	}
+}
+.line-right-box-area {
+	@extend .line-left-box-area;
+	float: right;
+}

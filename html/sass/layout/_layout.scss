@@ -1,0 +1,83 @@
+// =======================================
+// book-list.html (Book a Service - Search Salon)
+// =======================================
+#container.main-bg {
+	@extend %bg-common;
+}
+.search-list {
+	width: 100%;
+	// background: #e0e0e0;
+	> h3 {
+		color: #314002;
+		line-height: $base-line-height * 3;
+		i.fa-search {
+			font-size: 20px;
+			color: #999;
+			margin-right: 4px;
+			vertical-align: middle;
+		}
+	}
+}
+.search-list {
+	> input[type="text"] {
+		font-size: 14px;
+		padding-left: 8px;
+		padding-right: 8px;
+		height: $base-line-height * 2;
+		line-height: $base-line-height * 2;
+		margin-bottom: 10px;
+		@include border-radius(4px);
+	}
+	.address {
+		@include full;
+	}
+	@include susy-breakpoint($desktop, 12) {
+		.store-name {
+			@include span(9);
+		}
+	}
+}
+.search-list {
+	.checkbox-wrap {
+		line-height: $base-line-height * 2;
+		> li {
+			display: inline-block;
+			label {
+				font-size: 14px;
+			}
+			&:first-child {
+				margin-right: 20px;
+			}
+		}
+	}
+}
+.list-type {
+	@include susy-breakpoint($tablet, 8) {
+		@include container($tablet);
+	}
+	@include susy-breakpoint($desktop, 12) {
+		@include container($desktop);
+	}
+}
+.list-type {
+	> ul {
+		> li {
+			margin-bottom: 20px;
+		}
+		@include susy-breakpoint($mobile, 6) {
+			> li {
+				@include gallery(3 of 6);
+			}
+		}
+		@include susy-breakpoint($tablet, 8) {
+			> li {
+				@include gallery(3 of 9);
+			}
+		}
+		@include susy-breakpoint($desktop, 12) {
+			> li {
+				@include gallery(3 of 12);
+			}
+		}
+	}
+}
