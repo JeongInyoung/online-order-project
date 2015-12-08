@@ -11,33 +11,342 @@
 
 <!-- Contents Area-->
 <main id="container" class="main-bg">
-	<article class="search-list wrap">
-		<h3><i class="fa fa-search"></i>Search</h3>
-		<input type="text" class="address" placeholder="Your Address" aria-label="Your Address"><br>
-		<input type="text" class="store-name" placeholder="Store Name" aria-label="Store Name">
-		<ul class="checkbox-wrap">
-			<li class="checkbox">
-				<input type="checkbox" id="Delivery">
-				<label class="delivery-label"for="Delivery">Delivery</label>
-			</li>
-			<li class="checkbox">
-				<input type="checkbox" id="Pickup">
-				<label class="pickup-label"for="Pickup">Pickup</label>
-			</li>
-		</ul>
+	<article class="search-list">
+		<div class="wrap">
+			<h3><i class="fa fa-search"></i>Search</h3>
+			<input type="text" class="address" placeholder="Your Address" aria-label="Your Address"><br>
+			<input type="text" class="store-name" placeholder="Store Name" aria-label="Store Name">
+			<ul class="checkbox-wrap">
+				<li class="checkbox">
+					<input type="checkbox" id="Delivery">
+					<label class="delivery-label"for="Delivery">Delivery</label>
+				</li>
+				<li class="checkbox">
+					<input type="checkbox" id="Pickup">
+					<label class="pickup-label"for="Pickup">Pickup</label>
+				</li>
+			</ul>
+			<ul class="food-find">
+				<li><a class="check" href=""><i class="fa fa-check"></i>Chinese</a><img src="/Common/images/menu/food-chinese.jpg"alt="chinese"></li>
+				<li><a class="check-on" href=""><i class="fa fa-check"></i>Pizza</a><img src="/Common/images/menu/food-pizza.jpg"alt="pizza"></li>
+				<li><a class="check" href=""><i class="fa fa-check"></i>Sushi</a><img src="/Common/images/menu/food-sushi.jpg"alt="sushi"></li>
+				<li><a class="check" href=""><i class="fa fa-check"></i>food-Indian</a><img src="/Common/images/menu/food-indian.jpg"alt="indian"></li>
+				<li><a class="check" href=""><i class="fa fa-check"></i>Burgers</a><img src="/Common/images/menu/food-burgers.jpg"alt="burgers"></li>
+				<li><a class="check" href=""><i class="fa fa-check"></i>Thai</a><img src="/Common/images/menu/food-thai.jpg"alt="thai"></li>
+				<li><a class="check" href=""><i class="fa fa-check"></i>Spanish</a><img src="/Common/images/menu/food-spanish.jpg"alt="spanish"></li>
+				<li><a class="check" href=""><i class="fa fa-check"></i>Pasta</a><img src="/Common/images/menu/food-pasta.jpg"alt="pasta"></li>
+			</ul>
+			<a class="btn-find"><i class="fa fa-search"></i>Find</a>
+		</div>
 	</article>
-	<article class="list-type wrap">
-		<ul>
-			<li><i class="fa fa-chevron-down"></i><span>Chinese</span><img src="/Common/images/menu/food-chinese.jpg"alt="chinese"></li>
-			<li><i class="fa fa-chevron-down"></i><span>Pizza</span><img src="/Common/images/menu/food-pizza.jpg"alt="pizza"></li>
-			<li><i class="fa fa-chevron-down"></i><span>Sushi</span><img src="/Common/images/menu/food-sushi.jpg"alt="sushi"></li>
-			<li><i class="fa fa-chevron-down"></i><span>food-Indian</span><img src="/Common/images/menu/food-indian.jpg"alt="indian"></li>
-			<li><i class="fa fa-chevron-down"></i><span>Burgers</span><img src="/Common/images/menu/food-burgers.jpg"alt="burgers"></li>
-			<li><i class="fa fa-chevron-down"></i><span>Thai</span><img src="/Common/images/menu/food-thai.jpg"alt="thai"></li>
-			<li><i class="fa fa-chevron-down"></i><span>Spanish</span><img src="/Common/images/menu/food-spanish.jpg"alt="spanish"></li>
-			<li><i class="fa fa-chevron-down"></i><span>Pasta</span><img src="/Common/images/menu/food-pasta.jpg"alt="pasta"></li>
-		</ul>
-		<a href="" class="btn-more">more<i class="fa fa-angle-down"></i></a>
+	<article class="wrap">
+		<div class="filter-list">
+			<div class="title">
+				<i class="fa fa-filter"></i>
+				<span>Search by City</span>
+			</div>
+			<div class="filter-data pc">
+				<dl>
+					<dt class="state">State</dt>
+					<dd>
+						<a href="">test1<span>(10)</span></a>
+						<a href="">test2<span>(10)</span></a>
+						<a href="">test3<span>(10)</span></a>
+						<a class="active" href="">test4<span>(10)</span></a>
+						<a href="">test5<span>(10)</span></a>
+						<a href="">test6<span>(10)</span></a>
+						<a href="">test7<span>(10)</span></a>
+						<a href="">test8<span>(10)</span></a>
+						<a href="">test9<span>(10)</span></a>
+						<a href="">test10<span>(10)</span></a>
+					</dd>
+				</dl>
+				<dl>
+					<dt class="cuty">City</dt>
+					<dd>
+						<a href="">test1<span>(10)</span></a>
+						<a href="">test2<span>(10)</span></a>
+						<a href="">test3<span>(10)</span></a>
+						<a class="active" href="">test4<span>(10)</span></a>
+						<a href="">test5<span>(10)</span></a>
+						<a href="">test6<span>(10)</span></a>
+						<a href="">test7<span>(10)</span></a>
+						<a href="">test8<span>(10)</span></a>
+						<a href="">test9<span>(10)</span></a>
+						<a href="">test10<span>(10)</span></a>
+					</dd>
+				</dl>
+			</div>
+			<div class="filter-data mobile">
+				<div class="select-style">
+					<select>
+						<option value="">State</option>
+						<option value="">test1<span>(10)</span></option>
+						<option value="">test2<span>(10)</span></option>
+						<option value="">test3<span>(10)</span></option>
+						<option value="">test4<span>(10)</span></option>
+					</select>
+				</div>
+				<div class="select-style">
+					<select>
+						<option value="">City</option>
+						<option value="">test1<span>(10)</span></option>
+						<option value="">test2<span>(10)</span></option>
+						<option value="">test3<span>(10)</span></option>
+						<option value="">test4<span>(10)</span></option>
+						<option value="">test5<span>(10)</span></option>
+						<option value="">test6<span>(10)</span></option>
+						<option value="">test7<span>(10)</span></option>
+						<option value="">test8<span>(10)</span></option>
+						<option value="">test9<span>(10)</span></option>
+						<option value="">test10<span>(10)</span></option>
+					</select>
+				</div>
+			</div>
+			<a href="" class="filter-more">more<i class="fa fa-angle-down"></i></a>
+		</div>
+	</article>
+	<article class="wrap">
+		<div class="list-type-setting">
+			<button class="btn-list selected" aria-label="목록형"><i class="fa fa-th-list"></i></button>
+			<button class="btn-card" aria-label="카드형"><i class="fa fa-th"></i></button>
+		</div>
+		<!-- 목록형 리스트 일 경우 : class="line" 삽입, 카드형 리스트 일 경우 : class="card" 삽입  -->
+		<div class="list-type line">
+			<div class="store-box">
+				<div class="store-img">
+					<img src="/Common/images/store/pizza-hut.jpg" alt="Pizza Hut">
+				</div>
+				<div class="store-info">
+					<h4 class="store-name">Pizza House</h4>
+					<p class="store-intro">Chinese ,Pizza, Pickup/Delivery</p>
+					<p class="store-location">NJ CLIFFSIDE PARK</p>
+				</div>
+				<div class="store-delivery">
+					<dl>
+						<dt>Est Wait</dt>
+						<dd>60-70m</dd>
+					</dl>
+					<dl>
+						<dt>Delivery Min.</dt>
+						<dd>$15</dd>
+					</dl>
+					<dl>
+						<dt>Delivery Fee</dt>
+						<dd>$2.50</dd>
+					</dl>
+				</div>
+				<div class="store-btn">
+					<a href="" class="btn-map">more</a>
+					<a href="" class="btn-order">Order</a>
+					<button class="btn-heart-on"></button>
+				</div>
+			</div>
+			<div class="store-box">
+				<div class="store-img">
+					<img src="/Common/images/store/pizza-hut.jpg" alt="Pizza Hut">
+				</div>
+				<div class="store-info">
+					<h4 class="store-name">Pizza House</h4>
+					<p class="store-intro">Chinese ,Pizza, Pickup/Delivery</p>
+					<p class="store-location">NJ CLIFFSIDE PARK</p>
+				</div>
+				<div class="store-delivery">
+					<dl>
+						<dt>Est Wait</dt>
+						<dd>60-70m</dd>
+					</dl>
+					<dl>
+						<dt>Delivery Min.</dt>
+						<dd>$15</dd>
+					</dl>
+					<dl>
+						<dt>Delivery Fee</dt>
+						<dd>$2.50</dd>
+					</dl>
+				</div>
+				<div class="store-btn">
+					<a href="" class="btn-map">more</a>
+					<a href="" class="btn-order">Order</a>
+					<button class="btn-heart-off"></button>
+				</div>
+			</div>
+			<div class="store-box">
+				<div class="store-img">
+					<img src="/Common/images/store/pizza-hut.jpg" alt="Pizza Hut">
+				</div>
+				<div class="store-info">
+					<h4 class="store-name">Pizza House</h4>
+					<p class="store-intro">Chinese ,Pizza, Pickup/Delivery</p>
+					<p class="store-location">NJ CLIFFSIDE PARK</p>
+				</div>
+				<div class="store-delivery">
+					<dl>
+						<dt>Est Wait</dt>
+						<dd>60-70m</dd>
+					</dl>
+					<dl>
+						<dt>Delivery Min.</dt>
+						<dd>$15</dd>
+					</dl>
+					<dl>
+						<dt>Delivery Fee</dt>
+						<dd>$2.50</dd>
+					</dl>
+				</div>
+				<div class="store-btn">
+					<a href="" class="btn-map">more</a>
+					<a href="" class="btn-order">Order</a>
+					<button class="btn-heart-off"></button>
+				</div>
+			</div>
+			<div class="store-box">
+				<div class="store-img">
+					<img src="/Common/images/store/pizza-hut.jpg" alt="Pizza Hut">
+				</div>
+				<div class="store-info">
+					<h4 class="store-name">Pizza House</h4>
+					<p class="store-intro">Chinese ,Pizza, Pickup/Delivery</p>
+					<p class="store-location">NJ CLIFFSIDE PARK</p>
+				</div>
+				<div class="store-delivery">
+					<dl>
+						<dt>Est Wait</dt>
+						<dd>60-70m</dd>
+					</dl>
+					<dl>
+						<dt>Delivery Min.</dt>
+						<dd>$15</dd>
+					</dl>
+					<dl>
+						<dt>Delivery Fee</dt>
+						<dd>$2.50</dd>
+					</dl>
+				</div>
+				<div class="store-btn">
+					<a href="" class="btn-map">more</a>
+					<a href="" class="btn-order">Order</a>
+					<button class="btn-heart-off"></button>
+				</div>
+			</div>
+			<div class="store-box">
+				<div class="store-img">
+					<img src="/Common/images/store/pizza-hut.jpg" alt="Pizza Hut">
+				</div>
+				<div class="store-info">
+					<h4 class="store-name">Pizza House</h4>
+					<p class="store-intro">Chinese ,Pizza, Pickup/Delivery</p>
+					<p class="store-location">NJ CLIFFSIDE PARK</p>
+				</div>
+				<div class="store-delivery">
+					<dl>
+						<dt>Est Wait</dt>
+						<dd>60-70m</dd>
+					</dl>
+					<dl>
+						<dt>Delivery Min.</dt>
+						<dd>$15</dd>
+					</dl>
+					<dl>
+						<dt>Delivery Fee</dt>
+						<dd>$2.50</dd>
+					</dl>
+				</div>
+				<div class="store-btn">
+					<a href="" class="btn-map">more</a>
+					<a href="" class="btn-order">Order</a>
+					<button class="btn-heart-on"></button>
+				</div>
+			</div>
+			<div class="store-box">
+				<div class="store-img">
+					<img src="/Common/images/store/pizza-hut.jpg" alt="Pizza Hut">
+				</div>
+				<div class="store-info">
+					<h4 class="store-name">Pizza House</h4>
+					<p class="store-intro">Chinese ,Pizza, Pickup/Delivery</p>
+					<p class="store-location">NJ CLIFFSIDE PARK</p>
+				</div>
+				<div class="store-delivery">
+					<dl>
+						<dt>Est Wait</dt>
+						<dd>60-70m</dd>
+					</dl>
+					<dl>
+						<dt>Delivery Min.</dt>
+						<dd>$15</dd>
+					</dl>
+					<dl>
+						<dt>Delivery Fee</dt>
+						<dd>$2.50</dd>
+					</dl>
+				</div>
+				<div class="store-btn">
+					<a href="" class="btn-map">more</a>
+					<a href="" class="btn-order">Order</a>
+					<button class="btn-heart-on"></button>
+				</div>
+			</div>
+			<div class="store-box">
+				<div class="store-img">
+					<img src="/Common/images/store/pizza-hut.jpg" alt="Pizza Hut">
+				</div>
+				<div class="store-info">
+					<h4 class="store-name">Pizza House</h4>
+					<p class="store-intro">Chinese ,Pizza, Pickup/Delivery</p>
+					<p class="store-location">NJ CLIFFSIDE PARK</p>
+				</div>
+				<div class="store-delivery">
+					<dl>
+						<dt>Est Wait</dt>
+						<dd>60-70m</dd>
+					</dl>
+					<dl>
+						<dt>Delivery Min.</dt>
+						<dd>$15</dd>
+					</dl>
+					<dl>
+						<dt>Delivery Fee</dt>
+						<dd>$2.50</dd>
+					</dl>
+				</div>
+				<div class="store-btn">
+					<a href="" class="btn-map">more</a>
+					<a href="" class="btn-order">Order</a>
+					<button class="btn-heart-off"></button>
+				</div>
+			</div>
+			<div class="store-box">
+				<div class="store-img">
+					<img src="/Common/images/store/pizza-hut.jpg" alt="Pizza Hut">
+				</div>
+				<div class="store-info">
+					<h4 class="store-name">Pizza House</h4>
+					<p class="store-intro">Chinese ,Pizza, Pickup/Delivery</p>
+					<p class="store-location">NJ CLIFFSIDE PARK</p>
+				</div>
+				<div class="store-delivery">
+					<dl>
+						<dt>Est Wait</dt>
+						<dd>60-70m</dd>
+					</dl>
+					<dl>
+						<dt>Delivery Min.</dt>
+						<dd>$15</dd>
+					</dl>
+					<dl>
+						<dt>Delivery Fee</dt>
+						<dd>$2.50</dd>
+					</dl>
+				</div>
+				<div class="store-btn">
+					<a href="" class="btn-map">more</a>
+					<a href="" class="btn-order">Order</a>
+					<button class="btn-heart-on"></button>
+				</div>
+			</div>
+		</div>
+		<a href="" class="store btn-more">more<i class="fa fa-angle-down"></i></a>
 	</article>
 </main>
 <!-- / Contents Area End-->

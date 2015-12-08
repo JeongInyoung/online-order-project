@@ -6,77 +6,641 @@
 }
 .search-list {
 	width: 100%;
-	// background: #e0e0e0;
-	> h3 {
-		color: #314002;
-		line-height: $base-line-height * 3;
-		i.fa-search {
-			font-size: 20px;
-			color: #999;
-			margin-right: 4px;
-			vertical-align: middle;
-		}
-	}
-}
-.search-list {
-	> input[type="text"] {
-		font-size: 14px;
-		padding-left: 8px;
-		padding-right: 8px;
-		height: $base-line-height * 2;
-		line-height: $base-line-height * 2;
-		margin-bottom: 10px;
-		@include border-radius(4px);
-	}
-	.address {
-		@include full;
-	}
-	@include susy-breakpoint($desktop, 12) {
-		.store-name {
-			@include span(9);
-		}
-	}
-}
-.search-list {
-	.checkbox-wrap {
-		line-height: $base-line-height * 2;
-		> li {
-			display: inline-block;
-			label {
-				font-size: 14px;
-			}
-			&:first-child {
-				margin-right: 20px;
+	background: #e0e0e0;
+	padding-bottom: $base-line-height * 2;
+	> .wrap {
+		overflow: hidden;
+		> h3 {
+			color: #314002;
+			line-height: $base-line-height * 3;
+			i.fa-search {
+				font-size: 20px;
+				color: #999;
+				margin-right: 4px;
+				vertical-align: middle;
 			}
 		}
-	}
-}
-.list-type {
-	@include susy-breakpoint($tablet, 8) {
-		@include container($tablet);
-	}
-	@include susy-breakpoint($desktop, 12) {
-		@include container($desktop);
-	}
-}
-.list-type {
-	> ul {
-		> li {
-			margin-bottom: 20px;
+		> input[type="text"] {
+			font-size: 14px;
+			padding-left: 8px;
+			padding-right: 8px;
+			height: $base-line-height * 2;
+			line-height: $base-line-height * 2;
+			margin-bottom: 10px;
+			@include border-radius(3px);
 		}
-		@include susy-breakpoint($mobile, 6) {
+		.checkbox-wrap {
+			line-height: $base-line-height * 2;
 			> li {
-				@include gallery(3 of 6);
+				display: inline-block;
+				label {
+					font-size: 14px;
+				}
+				&:first-child {
+					margin-right: 20px;
+				}
 			}
+		}
+	}
+}
+.search-list {
+	.wrap {
+		.address {
+			@include full;
+		}
+		.store-name {
+			@include span(full);
+		}
+		.food-find {
+			@include span(full);
 		}
 		@include susy-breakpoint($tablet, 8) {
-			> li {
-				@include gallery(3 of 9);
+			.store-name {
+				@include span(5);
+			}
+			.checkbox-wrap {
+				@include span(3);
+				@include last;
+			}
+		}
+		@include susy-breakpoint(680px, 10) {
+			.store-name {
+				@include span(7);
+			}
+			.checkbox-wrap {
+				@include span(3);
+				@include last;
 			}
 		}
 		@include susy-breakpoint($desktop, 12) {
-			> li {
-				@include gallery(3 of 12);
+			.store-name {
+				@include span(9);
+			}
+			.checkbox-wrap {
+				@include span(3);
+				@include last;
+			}
+			.food-find {
+				@include span(9);
+			}
+		}
+	}
+}
+.search-list {
+	.wrap {
+		.btn-find {
+			@include btn-default($bg-color: #333, $color: $font-color-green);
+			@include border-radius(3px);
+			@include span(full);
+			font-size: 30px;
+			line-height: $base-line-height * 3;
+			clear: both;
+			i.fa {
+				font-size: 36px;
+				vertical-align: baseline;
+				margin-right: 8px;
+			}
+			@include susy-breakpoint($mobile, 6) {
+				line-height: $base-line-height * 4;
+				@include span(4);
+				@include w-center ($position: relative);
+			}
+			@include susy-breakpoint($tablet, 8) {
+				line-height: $base-line-height * 4;
+				@include span(4);
+			}
+			@include susy-breakpoint($desktop, 12) {
+				@include span(3);
+				@include last;
+				line-height: $base-line-height * 6;
+				clear: inherit;
+				@include w-center ($position: null, $w-percent:0);
+			}
+		}
+	}
+}
+.food-find {
+	margin-bottom: 10px;
+	overflow: hidden;
+	> li {
+		float: left;
+		width: 49.6%;
+		height: $base-line-height * 2;
+		margin-right: 1px;
+		margin-bottom: 1px;
+		background: #5a5a5a;
+		> img {
+			display: none;
+		}
+		> .check {
+			font-weight: normal;
+			color: #fff;
+			max-width: 100%;
+			@extend %text-wrap;
+			line-height: $base-line-height * 2;
+			padding: 0 6px;
+			> .fa {
+				display: inline-block;
+				font-size: 14px;
+				color:rgba(255,255,255,0.4);
+				margin-right: 6px;
+			}
+		}
+		> .check-on {
+			@extend .check;
+			color: $font-color-green;
+			> .fa {
+				color: $font-color-green;
+			}
+		}
+	}
+	@include susy-breakpoint(430px, 6) {
+		> li {
+			width: 33.06%;
+		}
+	}
+	@include susy-breakpoint(680px, 6) {
+		> li {
+			position: relative;
+			@include layout(8 1/72);
+			@include gallery(1 of 8);
+			> img {
+				display: block;
+				@include w-center;
+				max-width: auto;
+				max-height: 100%;
+				z-index: 9;
+			}
+			height: $base-line-height * 6;
+			overflow: hidden;
+			> .check {
+				display: block;
+				@include w-center;
+				width: 100%;
+				height: $base-line-height * 3;
+				line-height: $base-line-height;
+				text-align: center;
+				bottom: 0;
+				z-index: 10;
+				background-color:rgba(0,0,0,0.6);
+				> .fa {
+					display: block;
+					font-size: 30px;
+					margin-left: 0;
+					margin-right: 0;
+					margin-top: 2px;
+				}
+			}
+		}
+	}
+	@include susy-breakpoint($tablet, 8) {
+		> li {
+			@include layout(8 1px/74px);
+			@include gallery(1 of 8);
+		}
+	}
+	@include susy-breakpoint($desktop, 12) {
+		margin-bottom: 0;
+		> li {
+			@include layout(8 1px/90px);
+			@include gallery(1 of 8);
+		}
+	}
+}
+.list-type-setting {
+	@include span(full);
+	text-align: right;
+	line-height: $base-line-height * 3;
+	[class^="btn-"] {
+		display: inline-block;
+		margin-right: 15px;
+		i.fa {
+			font-size: 18px;
+			color: #999;
+			vertical-align: middle;
+		}
+		&:hover {
+			i.fa {
+				color: #666;
+			}
+		}
+		&.selected, &:focus {
+			i.fa {
+				color: $font-color-green;
+			}
+		}
+	}
+}
+.filter-list {
+	background: #f9f9f9;
+	padding: $base-line-height 0;
+	border: 1px solid $bg-default;
+	margin-top: $base-line-height*2;
+	@include border-radius(10px);
+	.title {
+		font-weight: bold;
+		text-align: center;
+		i.fa {
+			display: block;
+			font-size: 26px;
+			color: #999;
+			margin-bottom: 10px;
+		}
+		border-right: 1px solid $bg-default;
+	}
+}
+.filter-list {
+	.filter-more {
+		display: none;
+		@include btn-default($miw:auto,$bg-color: $bg-default, $fz: 12, $color: $font-default, $p:0);
+		@include border-left-radius(10px);
+		line-height: $base-line-height*3;
+		i.fa {
+			margin-left: 4px;
+		}
+	}
+}
+.filter-list {
+	.filter-data {
+		> dl {
+			color: #999;
+			overflow: hidden;
+			margin-bottom: $base-line-height;
+			dt, dd {
+				height: 18px;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+			dd {
+				font-weight: bold;
+				> a {
+					margin-right: 18px;
+					> span {
+						font-size: 10px;
+						color: #ed5316;
+						margin-left: 2px;
+					}
+					&:last-child {
+						margin-right: 0;
+					}
+					&.active, &:hover, &:focus {
+						color: $font-color-green;
+					}
+				}
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+.filter-list {
+	min-height: $base-line-height*5;
+	.title {
+		@include span(2);
+	}
+	.filter-data.mobile {
+		@include span(2);
+		@include last;
+		margin-top: -7px;
+		padding-right: 20px;
+		.select-style {
+			height: 30px;
+			margin-bottom: 6px;
+			.stb-select-container {
+				min-width: 100%;
+				background: #fff;
+				@include border-radius(3px);
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.filter-data.pc {
+		display: none;
+	}
+	.filter-more {
+		display: none;
+	}
+}
+.filter-list {
+	@include susy-breakpoint(480px, 6) {
+		.title {
+			@include span(2);
+		}
+		.filter-data.mobile {
+			@include span(4);
+			@include last;
+		}
+	}
+	@include susy-breakpoint($mobile, 8) {
+		.title {
+			@include span(2);
+		}
+		.filter-data.mobile {
+			@include span(6);
+			@include last;
+		}
+	}
+	@include susy-breakpoint(680px, 10) {
+		.title {
+			@include span(2);
+		}
+		.filter-data.mobile {
+			display: none;
+		}
+		.filter-data.pc {
+			display: block;
+			padding-right: 18px;
+			@include span(7);
+			> dl {
+				dt {
+					@include span(1);
+				}
+				dd {
+					@include span(9);
+					@include last;
+				}
+			}
+		}
+		.filter-more {
+			display: block;
+			@include span(1);
+			@include last;
+		}
+	}
+	@include susy-breakpoint($desktop, 12) {
+		.title {
+			@include span(2);
+		}
+		.filter-data.pc {
+			@include span(9);
+			> dl {
+				dt {
+					@include span(1);
+				}
+				dd {
+					@include span(11);
+					@include last;
+				}
+			}
+		}
+		.filter-more {
+			@include span(1);
+			@include last;
+		}
+	}
+}
+.store.btn-more {
+	margin-bottom: $base-line-height*2;
+}
+.store-box {
+	background: #fff;
+	@include border-radius(10px);
+	margin-bottom: $base-line-height;
+	overflow: hidden;
+	.store-img {
+		@include border-top-radius(10px);
+		overflow: hidden;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.store-info {
+		padding: 0 20px;
+		.store-name {
+			font-size: 30px;
+			color: $font-color-green;
+			line-height: 36px;
+			padding-top: 12px;
+		}
+		.store-intro {
+			font-size: 14px;
+			line-height: 14px*1.5;
+			padding-bottom: 6px;
+		}
+		.store-location {
+			color: #929292;
+			line-height: $base-line-height;
+			&:before {
+				font-family: 'FontAwesome';
+				content: "\f041";
+				font-size: 18px;
+				color: #333;
+				padding-right: 6px;
+			}
+		}
+	}
+	.store-delivery {
+		@include layout(9);
+		padding: $base-line-height 20px;
+		overflow: hidden;
+		dl {
+			color: #929292;
+			dt {
+				font-size: 11px;
+				line-height: 1;
+			}
+			dd {
+				font-size: 18px;
+			}
+		}
+		dl:nth-of-type(1) {
+			@include span(3);
+		}
+		dl:nth-of-type(2) {
+			@include span(3);
+			text-align: center;
+		}
+		dl:nth-of-type(3) {
+			@include span(3);
+			@include last;
+			text-align: right;
+		}
+	}
+}
+.store-btn {
+	@include layout(7 1/12);
+	padding: 0 20px 20px 20px;
+	overflow: hidden;
+	[class^="btn-"] {
+		@include border-radius(4px);
+	}
+	.btn-map {
+		@include btn-default($miw: 0, $bg-color: $font-color-green, $percent: 2%);
+		@include span(3);
+	}
+	.btn-order {
+		@include btn-default($miw: 0, $bg-color: #0bc586);
+		@include span(3);
+	}
+	[class^="btn-heart-"] {
+		height: 30px;
+	}
+	.btn-heart-on {
+		@include btn-default($miw: 0);
+		@include span(1);
+		@include last;
+		background: #e0e0e0 url(/Common/images/common/btn-like-on.png) center no-repeat;
+		&:hover, &:focus {
+			background: #e0e0e0 url(/Common/images/common/btn-like-off.png) center no-repeat;
+		}
+	}
+	.btn-heart-off {
+		@include btn-default($miw: 0);
+		@include span(1);
+		@include last;
+		background: #e0e0e0 url(/Common/images/common/btn-like-off.png) center no-repeat;
+		&:hover, &:focus {
+			background: #e0e0e0 url(/Common/images/common/btn-like-on.png) center no-repeat;
+		}
+	}
+}
+.list-type {
+	@include layout(4 18px/65px);
+	@include span(full);
+	overflow: hidden;
+}
+// 목록형 리스트
+.list-type.line {
+	.store-box {
+		padding: 20px;
+		.store-img {
+			@include span(2);
+			@include border-top-radius(0);
+			height: $base-line-height*5;
+		}
+		.store-info {
+			padding-left: 0;
+			padding-right: 0;
+			.store-name {
+				padding-top: 0;
+				font-size: 18px;
+			}
+			.store-intro {
+				padding-bottom: 20px;
+			}
+		}
+		.store-delivery {
+			padding: 10px 0;
+			dl {
+				dd {
+					font-size: 14px;
+				}
+			}
+		}
+		.store-btn {
+			padding: 0;
+		}
+	}
+	@include susy-breakpoint($mobile, 6) {
+		.store-box {
+			.store-img {
+				@include span(2);
+			}
+			.store-info {
+				@include span(4);
+				@include last;
+				.store-name {
+					font-size: 30px;
+				}
+				.store-intro {
+					padding-bottom: 8px;
+				}
+			}
+			.store-delivery {
+				@include span(full);
+				dl {
+					dd {
+						font-size: 18px;
+					}
+				}
+			}
+			.store-btn {
+				@include span(full);
+			}
+		}
+	}
+	@include susy-breakpoint($tablet, 8) {
+		.store-box {
+			.store-img {
+				@include span(2);
+			}
+			.store-info {
+				@include span(6);
+				@include last;
+			}
+			.store-delivery {
+				@include span(6);
+				@include last;
+			}
+			.store-btn {
+				@include span(6);
+				@include last;
+			}
+		}
+	}
+	@include susy-breakpoint($desktop, 12) {
+		.store-box {
+			.store-img {
+				@include span(2);
+				height: $base-line-height*5;
+			}
+			.store-info {
+				@include span(6);
+			}
+			.store-delivery {
+				@include span(4);
+				@include last;
+				padding: 0;
+				margin-top: 2px;
+				margin-bottom: $base-line-height;
+				dl {
+					dd {
+						font-size: 20px;
+					}
+				}
+			}
+			.store-btn {
+				@include span(4);
+				padding: 0;
+				@include last;
+			}
+		}
+	}
+}
+// 카드형 리스트
+.list-type.card {
+	@include susy-breakpoint($mobile, 6) {
+		.store-box {
+			.store-delivery {
+				dl {
+					dd {
+						font-size: 20px;
+					}
+				}
+			}
+		}
+	}
+	@include susy-breakpoint(680px, 8) {
+		.store-box {
+			@include gallery(4 of 8);
+		}
+	}
+	@include susy-breakpoint($desktop, 12) {
+		.store-box {
+			@include gallery(4 of 12);
+			.store-img {
+				@include span(full);
+				height: $base-line-height*5;
+				padding: 0;
+			}
+			.store-info {
+				@include span(full);
+				clear: both;
 			}
 		}
 	}

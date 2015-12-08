@@ -95,4 +95,26 @@
 	// Store & Designer 검색 input 요소 편집할 수 없게 설정
 	$( '[class$="-search-set"] li input[type=text]' ).attr('readonly', true);
 
+	// 리스트 타입 설정 (목록형, 카드형)
+	(function() {
+		var btnListType = $('.list-type'),
+			btnList = $('.list-type-setting .btn-list'),
+			btnCard = $('.list-type-setting .btn-card');
+
+		btnList.click(function(e) {
+			btnList.addClass ( "selected" );
+			btnCard.removeClass ( "selected" );
+			btnListType.addClass('line');
+			btnListType.removeClass('card');
+			e.stopPropagation ();
+		});
+		btnCard.click(function(e) {
+			btnCard.addClass ( "selected" );
+			btnList.removeClass ( "selected" );
+			btnListType.addClass('card');
+			btnListType.removeClass('line');
+			e.stopPropagation ();
+		});
+	})();
+
 })(window, document, window.jQuery);

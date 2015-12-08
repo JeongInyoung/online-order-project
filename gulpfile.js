@@ -85,7 +85,7 @@ gulp.task('build', function() {
 	gulp.start('imagemin');
 	setTimeout(function() {
 		gulp.start('css:min');
-	}, 7000);
+	}, 10000);
 });
 
 // =======================================
