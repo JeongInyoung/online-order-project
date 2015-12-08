@@ -71,11 +71,11 @@
 
       @font-face {
         font-family: 'iconfont';
-        src: url('font/iconfont.eot?h=564d15c7edf2de071ae5d825592d5ce5');
-        src: url('font/iconfont.eot?h=564d15c7edf2de071ae5d825592d5ce5#iefix') format('eot'),
-          url('font/iconfont.woff?h=564d15c7edf2de071ae5d825592d5ce5') format('woff'),
-          url('font/iconfont.ttf?h=564d15c7edf2de071ae5d825592d5ce5') format('truetype'),
-          url('font/iconfont.svg?h=564d15c7edf2de071ae5d825592d5ce5#iconfont') format('svg');
+        src: url('font/iconfont.eot?h=c8d526105e11cdc1c6ab75d7923edcba');
+        src: url('font/iconfont.eot?h=c8d526105e11cdc1c6ab75d7923edcba#iefix') format('eot'),
+          url('font/iconfont.woff?h=c8d526105e11cdc1c6ab75d7923edcba') format('woff'),
+          url('font/iconfont.ttf?h=c8d526105e11cdc1c6ab75d7923edcba') format('truetype'),
+          url('font/iconfont.svg?h=c8d526105e11cdc1c6ab75d7923edcba#iconfont') format('svg');
       }
 
       .iconfont {
@@ -118,6 +118,17 @@
         content: '\E001';
       }
       
+      /**
+       * IE8 : Polyfill using behavior
+       */
+      .iconfont-store-default {
+        behavior: url(font/iconfont.htc);
+        icon: 'E002';
+      }
+      .iconfont-store-default:before {
+        content: '\E002';
+      }
+      
     </style>
   </head>
   <body>
@@ -129,6 +140,13 @@
             <span class="glyph-icon"><i class="iconfont iconfont-designer"></i></span>
             <span class="glyph-class">iconfont-designer</span>
             <span class="glyph-codepoint">E001</span>
+          </span>
+        </li>
+        <li>
+          <span class="glyph-ellipsis">
+            <span class="glyph-icon"><i class="iconfont iconfont-store-default"></i></span>
+            <span class="glyph-class">iconfont-store-default</span>
+            <span class="glyph-codepoint">E002</span>
           </span>
         </li>
       </ul>

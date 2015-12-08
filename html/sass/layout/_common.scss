@@ -3,7 +3,10 @@
 // =======================================
 $mobile: 560px;
 $tablet: 760px;
-$desktop: 978px;
+$desktop: 998px;
+
+// Line Height 간격 설정
+$base-line-height: 18px;
 
 // =======================================
 // Grid System Style
@@ -75,6 +78,12 @@ button {
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 	-webkit-text-fill-color: #999 !important;
 	-webkit-box-shadow: 0 0 0px 1000px #e0e0e0 inset;
+}
+// FontAwesome
+@mixin fa ($icon: " ", $fz: 16) {
+	font-family: 'FontAwesome';
+	content: $icon;
+	font-size: $fz + px;
 }
 // 영역 내 가운데 정렬
 @mixin wh-center ($position: absolute, $h-percent: 50%, $w-percent: 50%) {

@@ -85,7 +85,7 @@ gulp.task('build', function() {
 	gulp.start('imagemin');
 	setTimeout(function() {
 		gulp.start('css:min');
-	}, 10000);
+	}, 15000);
 });
 
 // =======================================
@@ -112,7 +112,7 @@ gulp.task('server', ['imagemin', 'iconfont', 'htmlSSI', 'sass', 'js'], function(
 		// 알림 설정
 		notify: !true,
 		// 포트 설정
-		port: 9090,
+		port: 9191,
 		// 서버 설정
 		server: {
 			// 기본 디렉토리 설정
@@ -234,7 +234,7 @@ gulp.task('iconfont:make', function(cb){
 		// Preview 생성 폴더 경로 설정
 		previewFolder: SRC + '/iconfont/preview',
 		// font 경로 설정
-		fontUrl: '/fonts',
+		fontUrl: '/Common/fonts',
 		// 아이콘 베이스라인 위치 설정
 		descent: 30
 	}, cb);
